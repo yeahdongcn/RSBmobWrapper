@@ -159,7 +159,7 @@ NSString *const kBWMailKey             = @"email";
         NSString *className = [info objectForKey:kBWObjectClassNameKey];
         object = [[BmobObject alloc] initWithClassName:className];
     }
-    // Go through every key-value pair except DCObject and DCObjectClassName
+    // Go through every key-value pair except BWObject and BWObjectClassName
     [info enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         if (!([key isEqualToString:kBWObjectKey] || [key isEqualToString:kBWObjectClassNameKey])) {
             
