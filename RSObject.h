@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@class BmobObject;
+#import "RSBmobWrapper.h"
 
+#define PropertyName(property) [[(@""#property) componentsSeparatedByString:@"."] lastObject]
 /**
  *  Basic class for all kinds of data object
  */
@@ -24,6 +25,8 @@
 @property (nonatomic, readonly) BmobObject *bmobObject;
 
 @property (nonatomic, readonly) NSString *identifier;
+
+@property (nonatomic, readonly) NSString *className;
 
 - (void)saveWithCallback:(void(^)(BmobObject *, BOOL, NSError *))callback;
 

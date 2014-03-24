@@ -10,8 +10,13 @@
 
 #import "RSAppDelegate.h"
 
+#import "RSBmobWrapper.h"
+
 int main(int argc, char * argv[])
 {
+    // TODO: Replace the application key with your own.
+    [RSBmobWrapper registerBmobWithAppKey:@"5334e9c33ced5740f1328a30c8f3f75b"];
+    
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([RSAppDelegate class]));
     }

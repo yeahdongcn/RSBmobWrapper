@@ -11,10 +11,11 @@
 NSString *const kBmobObjectIdentifier  = @"objectId";
 NSString *const kBmobObjectCreatedAt   = @"createdAt";
 NSString *const kBmobObjectUpdatedAt   = @"updatedAt";
-NSString *const kBmobFilePrefix        = @"http://file.bmob.cn/";
+NSString *const kBmobFileURLPrefix     = @"http://file.bmob.cn/";
 
 NSString *const kBWObjectClassNameKey  = @"ObjectClassName";
 NSString *const kBWObjectKey           = @"Object";
+
 NSString *const kBWFileClassNameKey    = @"File";
 
 NSString *const kBWUserKey             = @"User";
@@ -25,31 +26,21 @@ NSString *const kBWMailKey             = @"email";
 
 @implementation RSBmobWrapper
 
-+ (instancetype)defaultBmobWrapper
-{
-    static RSBmobWrapper *defaultBmobWrapper = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        defaultBmobWrapper = [[self alloc] init];
-    });
-    return defaultBmobWrapper;
-}
-
 #pragma mark - Register
 
-- (void)registerBmobWithAppKey:(NSString *)appKey
++ (void)registerBmobWithAppKey:(NSString *)appKey
 {
     [Bmob registerWithAppKey:appKey];
 }
 
 #pragma mark - User
 
-- (BmobUser *)getCurrentUser
++ (BmobUser *)getCurrentUser
 {
     return [BmobUser getCurrentObject];
 }
 
-- (void)updateBmobUser:(BmobUser *)bmobUser withUserInfo:(NSDictionary *)userInfo
++ (void)updateBmobUser:(BmobUser *)bmobUser withUserInfo:(NSDictionary *)userInfo
 {
     [userInfo enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         if ([key isEqualToString:kBWUsernameKey]) {
@@ -71,7 +62,7 @@ NSString *const kBWMailKey             = @"email";
     }];
 }
 
-- (void)signUpWithUserInfo:(NSDictionary *)userInfo
++ (void)signUpWithUserInfo:(NSDictionary *)userInfo
               withCallback:(void(^)(BOOL, NSError *))callback
 {
     BmobUser *user = [[BmobUser alloc] init];
@@ -83,7 +74,7 @@ NSString *const kBWMailKey             = @"email";
     }];
 }
 
-- (void)signInWithUserInfo:(NSDictionary *)userInfo
++ (void)signInWithUserInfo:(NSDictionary *)userInfo
               withCallback:(void(^)(BmobUser *, NSError *))callback
 {
     [BmobUser logInWithUsernameInBackground:userInfo[kBWUsernameKey]
@@ -95,7 +86,7 @@ NSString *const kBWMailKey             = @"email";
                                       }];
 }
 
-- (void)updateWithUserInfo:(NSDictionary *)userInfo
++ (void)updateWithUserInfo:(NSDictionary *)userInfo
               withCallback:(void(^)(BOOL, NSError *))callback
 {
     BmobUser *user = [userInfo objectForKey:kBWUserKey];
@@ -107,19 +98,19 @@ NSString *const kBWMailKey             = @"email";
     }];
 }
 
-- (void)resetPasswordWithUserInfo:(NSDictionary *)userInfo
++ (void)resetPasswordWithUserInfo:(NSDictionary *)userInfo
 {
     [BmobUser requestPasswordResetInBackgroundWithEmail:userInfo[kBWMailKey]];
 }
 
-- (void)signOutCurrentUser
++ (void)signOutCurrentUser
 {
     [BmobUser logout];
 }
 
 #pragma mark - Query
 
-- (void)getObjectWithClassName:(NSString *)className
++ (void)getObjectWithClassName:(NSString *)className
           withObjectIdentifier:(NSString *)objectIdentifier
                   withCallback:(void(^)(BmobObject *, NSError *))callback
 {
@@ -131,7 +122,7 @@ NSString *const kBWMailKey             = @"email";
     }];
 }
 
-- (void)getObjectsWithClassName:(NSString *)className
++ (void)getObjectsWithClassName:(NSString *)className
                 withPreparation:(void(^)(BmobQuery *))preparation
                    withCallback:(void(^)(NSArray *, NSError *))callback
 {
@@ -148,7 +139,7 @@ NSString *const kBWMailKey             = @"email";
 
 #pragma mark - Save&update
 
-- (void)saveObjectWithInfo:(NSDictionary *)info
++ (void)saveObjectWithInfo:(NSDictionary *)info
               withCallback:(void(^)(BmobObject *, BOOL, NSError *))callback
 {
     BOOL isUpdate = NO;
@@ -193,7 +184,7 @@ NSString *const kBWMailKey             = @"email";
 
 #pragma mark - Delete
 
-- (void)deleteObject:(BmobObject *)object
++ (void)deleteObject:(BmobObject *)object
         withCallback:(void(^)(BOOL, NSError *))callback
 {
     [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {

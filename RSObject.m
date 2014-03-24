@@ -8,8 +8,6 @@
 
 #import "RSObject.h"
 
-#import "RSBmobWrapper.h"
-
 @interface RSObject ()
 
 @property (nonatomic, strong) NSMutableDictionary *storage;
@@ -45,7 +43,15 @@ NSString *const kRSObjectClassName = @"Object";
 
 - (NSString *)identifier
 {
-    return self.bmobObject.objectId;
+    if (self.bmobObject) {
+        return self.bmobObject.objectId;
+    }
+    return nil;
+}
+
+- (NSString *)className
+{
+    return [self.storage objectForKey:kBWObjectClassNameKey];
 }
 
 - (void)setBmobObject:(BmobObject *)bmobObject
@@ -60,7 +66,7 @@ NSString *const kRSObjectClassName = @"Object";
 
 - (void)saveWithCallback:(void(^)(BmobObject *, BOOL, NSError *))callback
 {
-    [[RSBmobWrapper defaultBmobWrapper] saveObjectWithInfo:self.storage withCallback:^(BmobObject *object, BOOL succeeded, NSError *error) {
+    [RSBmobWrapper saveObjectWithInfo:self.storage withCallback:^(BmobObject *object, BOOL succeeded, NSError *error) {
         if (callback) {
             callback(object, succeeded, error);
         }
@@ -69,7 +75,7 @@ NSString *const kRSObjectClassName = @"Object";
 
 - (void)deleteWithCallback:(void(^)(BOOL, NSError *))callback
 {
-    [[RSBmobWrapper defaultBmobWrapper] deleteObject:self.bmobObject withCallback:^(BOOL succeeded, NSError *error) {
+    [RSBmobWrapper deleteObject:self.bmobObject withCallback:^(BOOL succeeded, NSError *error) {
         if (callback) {
             callback(succeeded, error);
         }

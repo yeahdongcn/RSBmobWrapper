@@ -17,7 +17,7 @@
 extern NSString *const kBmobObjectIdentifier;
 extern NSString *const kBmobObjectCreatedAt;
 extern NSString *const kBmobObjectUpdatedAt;
-extern NSString *const kBmobFilePrefix;
+extern NSString *const kBmobFileURLPrefix;
 
 extern NSString *const kBWObjectClassNameKey;
 extern NSString *const kBWObjectKey;
@@ -33,28 +33,26 @@ extern NSString *const kBWMailKey;
  */
 @interface RSBmobWrapper : NSObject
 
-+ (instancetype)defaultBmobWrapper;
-
 #pragma mark - Register
 
-- (void)registerBmobWithAppKey:(NSString *)appKey;
++ (void)registerBmobWithAppKey:(NSString *)appKey;
 
 #pragma mark - User
 
-- (BmobUser *)getCurrentUser;
++ (BmobUser *)getCurrentUser;
 
-- (void)signUpWithUserInfo:(NSDictionary *)userInfo
++ (void)signUpWithUserInfo:(NSDictionary *)userInfo
               withCallback:(void(^)(BOOL, NSError *))callback;
 
-- (void)signInWithUserInfo:(NSDictionary *)userInfo
++ (void)signInWithUserInfo:(NSDictionary *)userInfo
               withCallback:(void(^)(BmobUser *, NSError *))callback;
 
-- (void)updateWithUserInfo:(NSDictionary *)userInfo
++ (void)updateWithUserInfo:(NSDictionary *)userInfo
               withCallback:(void(^)(BOOL, NSError *))callback;
 
-- (void)resetPasswordWithUserInfo:(NSDictionary *)userInfo;
++ (void)resetPasswordWithUserInfo:(NSDictionary *)userInfo;
 
-- (void)signOutCurrentUser;
++ (void)signOutCurrentUser;
 
 #pragma mark - Query
 
@@ -65,7 +63,7 @@ extern NSString *const kBWMailKey;
  *  @param objectIdentifier Given object identifier
  *  @param callback         Callback for received data or error
  */
-- (void)getObjectWithClassName:(NSString *)className
++ (void)getObjectWithClassName:(NSString *)className
           withObjectIdentifier:(NSString *)objectIdentifier
                   withCallback:(void(^)(BmobObject *, NSError *))callback;
 
@@ -76,7 +74,7 @@ extern NSString *const kBWMailKey;
  *  @param preparation Preparation block for setup the query
  *  @param callback    Callback for received data or error
  */
-- (void)getObjectsWithClassName:(NSString *)className
++ (void)getObjectsWithClassName:(NSString *)className
                 withPreparation:(void(^)(BmobQuery *))preparation
                    withCallback:(void(^)(NSArray *, NSError *))callback;
 
@@ -88,7 +86,7 @@ extern NSString *const kBWMailKey;
  *  @param info     Dictionary of object information
  *  @param callback Finished callback
  */
-- (void)saveObjectWithInfo:(NSDictionary *)info
++ (void)saveObjectWithInfo:(NSDictionary *)info
               withCallback:(void(^)(BmobObject *, BOOL, NSError *))callback;
 
 #pragma mark - Delete
@@ -99,7 +97,7 @@ extern NSString *const kBWMailKey;
  *  @param object   The Bmob object to be deleted
  *  @param callback Finished callback
  */
-- (void)deleteObject:(BmobObject *)object
++ (void)deleteObject:(BmobObject *)object
         withCallback:(void(^)(BOOL, NSError *))callback;
 
 @end
