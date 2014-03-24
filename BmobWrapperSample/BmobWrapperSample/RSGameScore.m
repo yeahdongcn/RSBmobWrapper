@@ -22,7 +22,7 @@ NSString *const kRSGameScoreAvatarKey = @"avatar";
 
 - (void)setScore:(NSUInteger)score
 {
-    [self.storage setObject:@(score) forKey:PropertyName(self.score)];
+    (self.storage)[PropertyName(self.score)] = @(score);
 }
 
 - (NSUInteger)score
@@ -30,12 +30,12 @@ NSString *const kRSGameScoreAvatarKey = @"avatar";
     if (self.bmobObject) {
         return [[self.bmobObject objectForKey:PropertyName(self.score)] unsignedIntegerValue];
     }
-    return [[self.storage objectForKey:PropertyName(self.score)] unsignedIntegerValue];
+    return [(self.storage)[PropertyName(self.score)] unsignedIntegerValue];
 }
 
 - (void)setUserName:(NSString *)userName
 {
-    [self.storage setObject:userName forKey:PropertyName(self.userName)];
+    (self.storage)[PropertyName(self.userName)] = userName;
 }
 
 - (NSString *)userName
@@ -43,12 +43,12 @@ NSString *const kRSGameScoreAvatarKey = @"avatar";
     if (self.bmobObject) {
         return [self.bmobObject objectForKey:PropertyName(self.userName)];
     }
-    return [self.storage objectForKey:PropertyName(self.userName)];
+    return (self.storage)[PropertyName(self.userName)];
 }
 
 - (void)setCheatMode:(BOOL)cheatMode
 {
-    [self.storage setObject:@(cheatMode) forKey:PropertyName(self.cheatMode)];
+    (self.storage)[PropertyName(self.cheatMode)] = @(cheatMode);
 }
 
 - (BOOL)cheatMode
@@ -56,12 +56,12 @@ NSString *const kRSGameScoreAvatarKey = @"avatar";
     if (self.bmobObject) {
         return [[self.bmobObject objectForKey:PropertyName(self.cheatMode)] boolValue];
     }
-    return [[self.storage objectForKey:PropertyName(self.cheatMode)] boolValue];
+    return [(self.storage)[PropertyName(self.cheatMode)] boolValue];
 }
 
 - (void)setAge:(NSUInteger)age
 {
-    [self.storage setObject:@(age) forKey:PropertyName(self.age)];
+    (self.storage)[PropertyName(self.age)] = @(age);
 }
 
 - (NSUInteger)age
@@ -69,12 +69,12 @@ NSString *const kRSGameScoreAvatarKey = @"avatar";
     if (self.bmobObject) {
         return [[self.bmobObject objectForKey:PropertyName(self.age)] unsignedIntegerValue];
     }
-    return [[self.storage objectForKey:PropertyName(self.age)] unsignedIntegerValue];
+    return [(self.storage)[PropertyName(self.age)] unsignedIntegerValue];
 }
 
 - (void)setAvatar:(UIImage *)avatar
 {
-    [self.storage setObject:UIImagePNGRepresentation(avatar) forKey:kRSGameScoreAvatarKey];
+    (self.storage)[kRSGameScoreAvatarKey] = UIImagePNGRepresentation(avatar);
 }
 
 - (void)getAvatarWithCallback:(void (^)(UIImage *))callback
@@ -103,7 +103,7 @@ NSString *const kRSGameScoreAvatarKey = @"avatar";
             [[AFHTTPRequestOperationManager manager].operationQueue addOperation:requestOperation];
         });
     } else if (callback) {
-        callback([[UIImage alloc] initWithData:[self.storage objectForKey:kRSGameScoreAvatarKey]]);
+        callback([[UIImage alloc] initWithData:(self.storage)[kRSGameScoreAvatarKey]]);
     }
 }
 

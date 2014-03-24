@@ -89,7 +89,7 @@ NSString *const kBWMailKey             = @"email";
 + (void)updateWithUserInfo:(NSDictionary *)userInfo
               withCallback:(void(^)(BOOL, NSError *))callback
 {
-    BmobUser *user = [userInfo objectForKey:kBWUserKey];
+    BmobUser *user = userInfo[kBWUserKey];
     [self updateBmobUser:user withUserInfo:userInfo];
     [user updateInBackgroundWithResultBlock:^(BOOL succeeded, NSError *error) {
         if (callback) {
@@ -143,11 +143,11 @@ NSString *const kBWMailKey             = @"email";
               withCallback:(void(^)(BmobObject *, BOOL, NSError *))callback
 {
     BOOL isUpdate = NO;
-    BmobObject *object = [info objectForKey:kBWObjectKey];
+    BmobObject *object = info[kBWObjectKey];
     if (object) {  // We have the object itself, update it
         isUpdate = YES;
     } else { // This is a pretty new object, save it
-        NSString *className = [info objectForKey:kBWObjectClassNameKey];
+        NSString *className = info[kBWObjectClassNameKey];
         object = [[BmobObject alloc] initWithClassName:className];
     }
     // Go through every key-value pair except BWObject and BWObjectClassName

@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>1EAED1FC-8F09-4F5F-A0AB-F0E361A85E11</string>
+	<string>0EB4D87A-3004-4052-9B8E-7E47713A8FA8</string>
 	<key>IDESourceControlProjectName</key>
 	<string>BmobWrapperSample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>FBA5592A-0CE6-469F-B970-CDE9DA3C2040</key>
-		<string>https://github.com/yeahdongcn/BmobWrapper.git</string>
+		<key>094F45AA-30C7-449F-AA3F-E7AEB90A2BFC</key>
+		<string>https://github.com/yeahdongcn/RSBmobWrapper.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>BmobWrapperSample/BmobWrapperSample.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>FBA5592A-0CE6-469F-B970-CDE9DA3C2040</key>
+		<key>094F45AA-30C7-449F-AA3F-E7AEB90A2BFC</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/yeahdongcn/BmobWrapper.git</string>
+	<string>https://github.com/yeahdongcn/RSBmobWrapper.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>FBA5592A-0CE6-469F-B970-CDE9DA3C2040</string>
+	<string>094F45AA-30C7-449F-AA3F-E7AEB90A2BFC</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>FBA5592A-0CE6-469F-B970-CDE9DA3C2040</string>
+			<string>094F45AA-30C7-449F-AA3F-E7AEB90A2BFC</string>
 			<key>IDESourceControlWCCName</key>
-			<string>BmobWrapper</string>
+			<string>RSBmobWrapper</string>
 		</dict>
 	</array>
 </dict>

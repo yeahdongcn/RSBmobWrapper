@@ -90,7 +90,7 @@
     
     // 4. QUERY WITH CONDITIONS
     [RSBmobWrapper getObjectsWithClassName:kRSGameScoreClassName withPreparation:^(BmobQuery *bmobQuery) {
-        [bmobQuery whereKey:@"age" lessThan:[NSNumber numberWithInt:20]];
+        [bmobQuery whereKey:@"age" lessThan:@20];
     } withCallback:^(NSArray *list, NSError *error) {
         NSLog(@"QUERY WITH CONDITIONS>>>>>");
         for (BmobObject *object in list) {

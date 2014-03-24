@@ -27,7 +27,7 @@
     if (self) {
         self.storage = [[NSMutableDictionary alloc] init];
         if (user) {
-            [self.storage setObject:user forKey:kBWUserKey];
+            (self.storage)[kBWUserKey] = user;
         }
     }
     return self;
@@ -35,12 +35,12 @@
 
 - (void)setBmobUser:(BmobUser *)bmobUser
 {
-    [self.storage setObject:bmobUser forKey:kBWUserKey];
+    (self.storage)[kBWUserKey] = bmobUser;
 }
 
 - (BmobUser *)bmobUser
 {
-    return [self.storage objectForKey:kBWUserKey];
+    return (self.storage)[kBWUserKey];
 }
 
 - (NSString *)identifier
@@ -50,7 +50,7 @@
 
 - (void)setUsername:(NSString *)username
 {
-    [self.storage setObject:username forKey:kBWUsernameKey];
+    (self.storage)[kBWUsernameKey] = username;
 }
 
 - (NSString *)username
@@ -58,12 +58,12 @@
     if (self.bmobUser) {
         return [self.bmobUser objectForKey:kBWUsernameKey];
     }
-    return [self.storage objectForKey:kBWUsernameKey];
+    return (self.storage)[kBWUsernameKey];
 }
 
 - (void)setPassword:(NSString *)password
 {
-    [self.storage setObject:password forKey:kBWPasswordKey];
+    (self.storage)[kBWPasswordKey] = password;
 }
 
 - (NSString *)password
@@ -71,12 +71,12 @@
     if (self.bmobUser) {
         return [self.bmobUser objectForKey:kBWPasswordKey];
     }
-    return [self.storage objectForKey:kBWPasswordKey];
+    return (self.storage)[kBWPasswordKey];
 }
 
 - (void)setMail:(NSString *)mail
 {
-    [self.storage setObject:mail forKey:kBWMailKey];
+    (self.storage)[kBWMailKey] = mail;
 }
 
 - (NSString *)mail
@@ -84,7 +84,7 @@
     if (self.bmobUser) {
         return [self.bmobUser objectForKey:kBWMailKey];
     }
-    return [self.storage objectForKey:kBWMailKey];
+    return (self.storage)[kBWMailKey];
 }
 
 - (void)signUpWithCallback:(void(^)(BOOL, NSError *))callback
@@ -132,7 +132,7 @@
 
 + (void)resetPasswordByMail:(NSString *)mail
 {
-    [RSBmobWrapper resetPasswordWithUserInfo:[NSDictionary dictionaryWithObject:mail forKey:kBWMailKey]];
+    [RSBmobWrapper resetPasswordWithUserInfo:@{kBWMailKey: mail}];
 }
 
 + (void)getUserByIdentifier:(NSString *)identifier

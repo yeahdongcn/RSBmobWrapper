@@ -34,9 +34,9 @@ NSString *const kRSObjectClassName = @"Object";
     if (self) {
         self.storage = [[NSMutableDictionary alloc] init];
         if (object) {
-            [self.storage setObject:object forKey:kBWObjectKey];
+            (self.storage)[kBWObjectKey] = object;
         }
-        [self.storage setObject:className forKey:kBWObjectClassNameKey];
+        (self.storage)[kBWObjectClassNameKey] = className;
     }
     return self;
 }
@@ -51,17 +51,17 @@ NSString *const kRSObjectClassName = @"Object";
 
 - (NSString *)className
 {
-    return [self.storage objectForKey:kBWObjectClassNameKey];
+    return (self.storage)[kBWObjectClassNameKey];
 }
 
 - (void)setBmobObject:(BmobObject *)bmobObject
 {
-    [self.storage setObject:bmobObject forKey:kBWObjectKey];
+    (self.storage)[kBWObjectKey] = bmobObject;
 }
 
 - (BmobObject *)bmobObject
 {
-    return [self.storage objectForKey:kBWObjectKey];
+    return (self.storage)[kBWObjectKey];
 }
 
 - (void)saveWithCallback:(void(^)(BmobObject *, BOOL, NSError *))callback
