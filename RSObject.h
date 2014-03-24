@@ -11,6 +11,7 @@
 #import "RSBmobWrapper.h"
 
 #define PropertyName(property) [[(@""#property) componentsSeparatedByString:@"."] lastObject]
+
 /**
  *  Basic class for all kinds of data object
  */
