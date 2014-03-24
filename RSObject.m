@@ -8,6 +8,8 @@
 
 #import "RSObject.h"
 
+#import "RSBmobWrapper.h"
+
 @interface RSObject ()
 
 @property (nonatomic, strong) NSMutableDictionary *storage;
@@ -58,7 +60,7 @@ NSString *const kRSObjectClassName = @"Object";
 
 - (void)saveWithCallback:(void(^)(BmobObject *, BOOL, NSError *))callback
 {
-    [BW saveObjectWithInfo:self.storage withCallback:^(BmobObject *object, BOOL succeeded, NSError *error) {
+    [[RSBmobWrapper defaultBmobWrapper] saveObjectWithInfo:self.storage withCallback:^(BmobObject *object, BOOL succeeded, NSError *error) {
         if (callback) {
             callback(object, succeeded, error);
         }
@@ -67,7 +69,7 @@ NSString *const kRSObjectClassName = @"Object";
 
 - (void)deleteWithCallback:(void(^)(BOOL, NSError *))callback
 {
-    [BW deleteObject:self.bmobObject withCallback:^(BOOL succeeded, NSError *error) {
+    [[RSBmobWrapper defaultBmobWrapper] deleteObject:self.bmobObject withCallback:^(BOOL succeeded, NSError *error) {
         if (callback) {
             callback(succeeded, error);
         }

@@ -9,14 +9,10 @@
 #import <Foundation/Foundation.h>
 
 #import <BmobSDK/Bmob.h>
-
-#import <BmobSDK/BmobFile.h>
-
-#import <BmobSDK/BmobUser.h>
-
 #import <BmobSDK/BmobObject.h>
-
+#import <BmobSDK/BmobFile.h>
 #import <BmobSDK/BmobQuery.h>
+#import <BmobSDK/BmobUser.h>
 
 extern NSString *const kBmobObjectIdentifier;
 extern NSString *const kBmobObjectCreatedAt;

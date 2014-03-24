@@ -39,7 +39,7 @@ NSString *const kBWMailKey             = @"email";
 
 - (void)registerBmobWithAppKey:(NSString *)appKey
 {
-    [Bmob registWithAppKey:appKey];
+    [Bmob registerWithAppKey:appKey];
 }
 
 #pragma mark - User

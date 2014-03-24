@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class BmobObject;
+
 /**
  *  Basic class for all kinds of data object
  */

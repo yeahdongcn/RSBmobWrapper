@@ -16,22 +16,10 @@
 		D0DF98E518DFC73E00C2FB57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0DF98E318DFC73E00C2FB57 /* Main.storyboard */; };
 		D0DF98E818DFC73E00C2FB57 /* RSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DF98E718DFC73E00C2FB57 /* RSViewController.m */; };
 		D0DF98EA18DFC73E00C2FB57 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0DF98E918DFC73E00C2FB57 /* Images.xcassets */; };
-		D0DF98F118DFC73E00C2FB57 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DF98F018DFC73E00C2FB57 /* XCTest.framework */; };
-		D0DF98F218DFC73E00C2FB57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DF98D118DFC73E00C2FB57 /* Foundation.framework */; };
-		D0DF98F318DFC73E00C2FB57 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DF98D518DFC73E00C2FB57 /* UIKit.framework */; };
-		D0DF98FB18DFC73E00C2FB57 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0DF98F918DFC73E00C2FB57 /* InfoPlist.strings */; };
-		D0DF98FD18DFC73E00C2FB57 /* BmobWrapperSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DF98FC18DFC73E00C2FB57 /* BmobWrapperSampleTests.m */; };
+		D0DF991118DFC86D00C2FB57 /* RSBmobWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DF990E18DFC86D00C2FB57 /* RSBmobWrapper.m */; };
+		D0DF991218DFC86D00C2FB57 /* RSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D0DF991018DFC86D00C2FB57 /* RSObject.m */; };
+		D0DF991418DFC89600C2FB57 /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DF991318DFC89600C2FB57 /* BmobSDK.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		D0DF98F418DFC73E00C2FB57 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D0DF98C618DFC73E00C2FB57 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D0DF98CD18DFC73E00C2FB57;
-			remoteInfo = BmobWrapperSample;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D0DF98CE18DFC73E00C2FB57 /* BmobWrapperSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BmobWrapperSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,11 +36,12 @@
 		D0DF98E618DFC73E00C2FB57 /* RSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSViewController.h; sourceTree = "<group>"; };
 		D0DF98E718DFC73E00C2FB57 /* RSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSViewController.m; sourceTree = "<group>"; };
 		D0DF98E918DFC73E00C2FB57 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		D0DF98EF18DFC73E00C2FB57 /* BmobWrapperSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BmobWrapperSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0DF98F018DFC73E00C2FB57 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		D0DF98F818DFC73E00C2FB57 /* BmobWrapperSampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BmobWrapperSampleTests-Info.plist"; sourceTree = "<group>"; };
-		D0DF98FA18DFC73E00C2FB57 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		D0DF98FC18DFC73E00C2FB57 /* BmobWrapperSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BmobWrapperSampleTests.m; sourceTree = "<group>"; };
+		D0DF990D18DFC86D00C2FB57 /* RSBmobWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSBmobWrapper.h; path = ../RSBmobWrapper.h; sourceTree = "<group>"; };
+		D0DF990E18DFC86D00C2FB57 /* RSBmobWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSBmobWrapper.m; path = ../RSBmobWrapper.m; sourceTree = "<group>"; };
+		D0DF990F18DFC86D00C2FB57 /* RSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RSObject.h; path = ../RSObject.h; sourceTree = "<group>"; };
+		D0DF991018DFC86D00C2FB57 /* RSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RSObject.m; path = ../RSObject.m; sourceTree = "<group>"; };
+		D0DF991318DFC89600C2FB57 /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BmobSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,16 +52,7 @@
 				D0DF98D418DFC73E00C2FB57 /* CoreGraphics.framework in Frameworks */,
 				D0DF98D618DFC73E00C2FB57 /* UIKit.framework in Frameworks */,
 				D0DF98D218DFC73E00C2FB57 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D0DF98EC18DFC73E00C2FB57 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D0DF98F118DFC73E00C2FB57 /* XCTest.framework in Frameworks */,
-				D0DF98F318DFC73E00C2FB57 /* UIKit.framework in Frameworks */,
-				D0DF98F218DFC73E00C2FB57 /* Foundation.framework in Frameworks */,
+				D0DF991418DFC89600C2FB57 /* BmobSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,8 +62,8 @@
 		D0DF98C518DFC73E00C2FB57 = {
 			isa = PBXGroup;
 			children = (
+				D0DF990618DFC7BF00C2FB57 /* BmobWrapper */,
 				D0DF98D718DFC73E00C2FB57 /* BmobWrapperSample */,
-				D0DF98F618DFC73E00C2FB57 /* BmobWrapperSampleTests */,
 				D0DF98D018DFC73E00C2FB57 /* Frameworks */,
 				D0DF98CF18DFC73E00C2FB57 /* Products */,
 			);
@@ -93,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				D0DF98CE18DFC73E00C2FB57 /* BmobWrapperSample.app */,
-				D0DF98EF18DFC73E00C2FB57 /* BmobWrapperSampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,6 +80,7 @@
 		D0DF98D018DFC73E00C2FB57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0DF991318DFC89600C2FB57 /* BmobSDK.framework */,
 				D0DF98D118DFC73E00C2FB57 /* Foundation.framework */,
 				D0DF98D318DFC73E00C2FB57 /* CoreGraphics.framework */,
 				D0DF98D518DFC73E00C2FB57 /* UIKit.framework */,
@@ -134,22 +114,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D0DF98F618DFC73E00C2FB57 /* BmobWrapperSampleTests */ = {
+		D0DF990618DFC7BF00C2FB57 /* BmobWrapper */ = {
 			isa = PBXGroup;
 			children = (
-				D0DF98FC18DFC73E00C2FB57 /* BmobWrapperSampleTests.m */,
-				D0DF98F718DFC73E00C2FB57 /* Supporting Files */,
+				D0DF990D18DFC86D00C2FB57 /* RSBmobWrapper.h */,
+				D0DF990E18DFC86D00C2FB57 /* RSBmobWrapper.m */,
+				D0DF990F18DFC86D00C2FB57 /* RSObject.h */,
+				D0DF991018DFC86D00C2FB57 /* RSObject.m */,
 			);
-			path = BmobWrapperSampleTests;
-			sourceTree = "<group>";
-		};
-		D0DF98F718DFC73E00C2FB57 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D0DF98F818DFC73E00C2FB57 /* BmobWrapperSampleTests-Info.plist */,
-				D0DF98F918DFC73E00C2FB57 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
+			name = BmobWrapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,24 +145,6 @@
 			productReference = D0DF98CE18DFC73E00C2FB57 /* BmobWrapperSample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D0DF98EE18DFC73E00C2FB57 /* BmobWrapperSampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D0DF990318DFC73E00C2FB57 /* Build configuration list for PBXNativeTarget "BmobWrapperSampleTests" */;
-			buildPhases = (
-				D0DF98EB18DFC73E00C2FB57 /* Sources */,
-				D0DF98EC18DFC73E00C2FB57 /* Frameworks */,
-				D0DF98ED18DFC73E00C2FB57 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D0DF98F518DFC73E00C2FB57 /* PBXTargetDependency */,
-			);
-			name = BmobWrapperSampleTests;
-			productName = BmobWrapperSampleTests;
-			productReference = D0DF98EF18DFC73E00C2FB57 /* BmobWrapperSampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -199,11 +154,6 @@
 				CLASSPREFIX = RS;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = P.D.Q.;
-				TargetAttributes = {
-					D0DF98EE18DFC73E00C2FB57 = {
-						TestTargetID = D0DF98CD18DFC73E00C2FB57;
-					};
-				};
 			};
 			buildConfigurationList = D0DF98C918DFC73E00C2FB57 /* Build configuration list for PBXProject "BmobWrapperSample" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -219,7 +169,6 @@
 			projectRoot = "";
 			targets = (
 				D0DF98CD18DFC73E00C2FB57 /* BmobWrapperSample */,
-				D0DF98EE18DFC73E00C2FB57 /* BmobWrapperSampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -235,14 +184,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D0DF98ED18DFC73E00C2FB57 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D0DF98FB18DFC73E00C2FB57 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -250,29 +191,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0DF991118DFC86D00C2FB57 /* RSBmobWrapper.m in Sources */,
 				D0DF98DE18DFC73E00C2FB57 /* main.m in Sources */,
 				D0DF98E218DFC73E00C2FB57 /* RSAppDelegate.m in Sources */,
 				D0DF98E818DFC73E00C2FB57 /* RSViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D0DF98EB18DFC73E00C2FB57 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D0DF98FD18DFC73E00C2FB57 /* BmobWrapperSampleTests.m in Sources */,
+				D0DF991218DFC86D00C2FB57 /* RSObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D0DF98F518DFC73E00C2FB57 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D0DF98CD18DFC73E00C2FB57 /* BmobWrapperSample */;
-			targetProxy = D0DF98F418DFC73E00C2FB57 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D0DF98DA18DFC73E00C2FB57 /* InfoPlist.strings */ = {
@@ -289,14 +216,6 @@
 				D0DF98E418DFC73E00C2FB57 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D0DF98F918DFC73E00C2FB57 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D0DF98FA18DFC73E00C2FB57 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -377,6 +296,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BmobWrapperSample/BmobWrapperSample-Prefix.pch";
 				INFOPLIST_FILE = "BmobWrapperSample/BmobWrapperSample-Info.plist";
@@ -390,51 +313,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BmobWrapperSample/BmobWrapperSample-Prefix.pch";
 				INFOPLIST_FILE = "BmobWrapperSample/BmobWrapperSample-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		D0DF990418DFC73E00C2FB57 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BmobWrapperSample.app/BmobWrapperSample";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BmobWrapperSample/BmobWrapperSample-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "BmobWrapperSampleTests/BmobWrapperSampleTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		D0DF990518DFC73E00C2FB57 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BmobWrapperSample.app/BmobWrapperSample";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BmobWrapperSample/BmobWrapperSample-Prefix.pch";
-				INFOPLIST_FILE = "BmobWrapperSampleTests/BmobWrapperSampleTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -457,14 +344,7 @@
 				D0DF990218DFC73E00C2FB57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		D0DF990318DFC73E00C2FB57 /* Build configuration list for PBXNativeTarget "BmobWrapperSampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D0DF990418DFC73E00C2FB57 /* Debug */,
-				D0DF990518DFC73E00C2FB57 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
