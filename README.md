@@ -1,7 +1,7 @@
 BmobWrapper
 ===========
 
-#突然发现<a href="https://cn.avoscloud.com/" target="_blank">AVOS</a>这些功能都实现了！！！
+#突然发现<a href="https://cn.avoscloud.com/" target="_blank">AVOS</a> <a href="https://github.com/avoscloud/avoscloud-sdk" target="_blank">AVOS on Github</a>这些功能都实现了！！！
 
 
 提供了新的基类和Bmob相关内容的封装，好处在于减少了UI层面key－value的操作，直接可以用property中定义的名字get/set值。
