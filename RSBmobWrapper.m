@@ -19,7 +19,7 @@ NSString *const kBWObjectKey           = @"Object";
 NSString *const kBWFileClassNameKey    = @"File";
 
 NSString *const kBWUserKey             = @"User";
-NSString *const kBWUserClassName       = @"User";
+NSString *const kBWUserClassName       = @"_User";
 NSString *const kBWUsernameKey         = @"username";
 NSString *const kBWPasswordKey         = @"password";
 NSString *const kBWMailKey             = @"email";
